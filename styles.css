@@ -2300,7 +2300,8 @@ dd {
     pointer-events: none;
     transform: translateY(-12px);
     transition-property: opacity, transform, visibility;
-    transition-duration: 220ms;
+    transition-duration: 220ms, 220ms, 0s;
+    transition-delay: 0s, 0s, 220ms;
     transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
   }
 
@@ -2309,6 +2310,7 @@ dd {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
+    transition-delay: 0s;
   }
 
   .mobile-menu nav {
