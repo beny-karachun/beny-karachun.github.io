@@ -1004,6 +1004,100 @@ dd {
   transform: translate(3px, -3px);
 }
 
+/* Circuit Atlas visual */
+.project-brain {
+  grid-column: 1 / -1;
+  background: #dcebf4;
+}
+
+.brain-visual {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  min-height: 310px;
+  margin: 0 16px;
+  padding: 28px;
+  gap: 28px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: radial-gradient(ellipse at 28% 50%, #213647, #101c27 70%);
+  color: var(--white);
+}
+
+.brain-map {
+  width: 100%;
+  max-height: 270px;
+}
+
+.brain-outline {
+  fill: rgba(148, 217, 255, 0.08);
+  stroke: var(--sky);
+  stroke-width: 2;
+}
+
+.brain-fold {
+  fill: none;
+  stroke: rgba(148, 217, 255, 0.3);
+  stroke-linecap: round;
+  stroke-width: 1.5;
+}
+
+.brain-connection {
+  fill: none;
+  stroke: var(--lime);
+  stroke-width: 2;
+  stroke-dasharray: 5 6;
+}
+
+.brain-node {
+  fill: var(--lime);
+  stroke: #101c27;
+  stroke-width: 3;
+}
+
+.brain-node-selected {
+  fill: var(--sky);
+}
+
+.brain-summary > span,
+.brain-summary small {
+  display: block;
+  color: var(--sky);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  line-height: 1.6;
+}
+
+.brain-summary > strong {
+  display: block;
+  margin: 16px 0 24px;
+  font-size: clamp(1.4rem, 3.6vw, 3.6rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.brain-route {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+}
+
+.brain-route > span {
+  padding: 7px 9px;
+  border: 1px solid rgba(148, 217, 255, 0.25);
+  border-radius: 7px;
+}
+
+.brain-route i {
+  color: var(--lime);
+  font-style: normal;
+}
+
 /* MathPaster visual */
 .project-math {
   background: var(--violet);
@@ -2429,6 +2523,7 @@ dd {
 
   .math-visual,
   .technionprep-visual,
+  .brain-visual,
   .shoresh-visual,
   .cfu-visual,
   .python-visual,
@@ -2436,6 +2531,25 @@ dd {
     min-height: 270px;
     margin-inline: 10px;
     border-radius: 12px;
+  }
+
+  .brain-visual {
+    padding: 18px 12px;
+    gap: 12px;
+  }
+
+  .brain-summary > span,
+  .brain-summary small,
+  .brain-route {
+    font-size: 0.5rem;
+  }
+
+  .brain-route {
+    gap: 4px;
+  }
+
+  .brain-route > span {
+    padding: 5px;
   }
 
   .equation-shell {
