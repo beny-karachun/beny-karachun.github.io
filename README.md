@@ -44,6 +44,20 @@ python3 -m http.server 4173
 
 Then open `http://localhost:4173`.
 
+## First screen and topic views
+
+The root URL opens a small topic chooser. The five choices use URL fragments:
+`#science`, `#software`, `#products`, `#services`, and `#about`.
+Each choice shows the relevant sections and project cards. It also sets the hero
+and contact text for that topic. `#welcome` returns to the chooser.
+`#top` opens the full portfolio from the chooser.
+
+Section links within a topic keep that view. Browser history holds the topic
+when visitors use Back, Forward, or reload a section link. A new direct link to
+an existing section or project, such as `#circuit-atlas`, opens the full portfolio.
+The chooser does not store a visitor preference or track a choice.
+Without JavaScript, the chooser links lead to sections in the full page.
+
 ## Main files
 
 - `index.html` — portfolio, selected work, project directory, about, and contact

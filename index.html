@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="Beny Karachun is a Technion Biotechnology and Food Engineering student building validated scientific tools and pursuing research in antimicrobial resistance, Staphylococcus aureus, and immune engineering."
+      content="Explore Beny Karachun’s work in biotechnology, scientific software, AI, and useful tools. Find projects, services, and his Technion background."
     >
     <meta name="theme-color" content="#0b0d0c">
-    <meta property="og:title" content="Beny Karachun — Biotechnology &amp; Scientific Computing">
+    <meta property="og:title" content="Beny Karachun — Science, Software &amp; Tools">
     <meta
       property="og:description"
-      content="Validated laboratory tools, scientific computing projects, and a research direction focused on antimicrobial resistance and human immunity."
+      content="Biotechnology, software, AI, and useful tools. Choose a topic to explore Beny’s projects, services, and background."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://beny-karachun.github.io/">
     <link rel="canonical" href="https://beny-karachun.github.io/">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Beny Karachun — Biotechnology &amp; Scientific Computing</title>
+    <title>Beny Karachun — Science, Software &amp; Tools</title>
 
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,20 +26,20 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="styles.css?v=00fe5247f8f8">
+    <link rel="stylesheet" href="styles.css?v=8432ffe0217a">
     <script>
       document.documentElement.classList.add("js");
     </script>
-    <script src="script.js?v=e8767528b3a6" defer></script>
+    <script src="script.js?v=486c43d8337b" defer></script>
   </head>
 
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <a class="skip-link" href="#welcome-choices">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true" hidden><span></span></div>
 
-    <header class="site-header" data-header>
+    <header class="site-header" data-header hidden>
       <div class="header-inner">
-        <a class="brand" href="#top" aria-label="BK — Beny Karachun, back to top">
+        <a class="brand" href="#welcome" aria-label="Beny Karachun, choose a topic">
           <span class="brand-mark" aria-hidden="true">BK</span>
           <span class="brand-name">Beny Karachun</span>
         </a>
@@ -111,15 +111,49 @@
         <a href="#about"><span>04</span> About</a>
         <a href="#contact"><span>05</span> Contact</a>
         <a href="resume.html"><span>06</span> Résumé</a>
+        <a href="#welcome"><span>07</span> Choose a topic</a>
       </nav>
     </div>
 
     <main id="main-content">
+      <section class="welcome" id="welcome" aria-labelledby="welcome-title">
+        <div class="welcome-inner">
+          <p class="welcome-name">Beny Karachun</p>
+          <h1 id="welcome-title">So... what do you <span>care about?</span></h1>
+          <nav class="welcome-choices" id="welcome-choices" aria-label="Choose a topic">
+            <a href="#science">
+              <span><strong>Biotechnology &amp; Food Engineering</strong><small>Research, science, and the Technion.</small></span>
+              <span class="choice-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="#software">
+              <span><strong>Software &amp; AI</strong><small>Code, data, and how I build.</small></span>
+              <span class="choice-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="#products">
+              <span><strong>My products</strong><small>Tools you can use right now.</small></span>
+              <span class="choice-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="#services">
+              <span><strong>Work with me</strong><small>Internal tools, websites, business improvement, or another service.</small></span>
+              <span class="choice-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="#about">
+              <span><strong>Get to know me</strong><small>My background, interests, and story.</small></span>
+              <span class="choice-arrow" aria-hidden="true">↗</span>
+            </a>
+          </nav>
+          <a class="welcome-all" href="#top">View the full portfolio <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-glow" aria-hidden="true"></div>
 
         <div class="hero-copy">
+          <div class="topic-bar" hidden>
+            <span data-current-topic></span>
+            <a href="#welcome">Choose another topic <span aria-hidden="true">↗</span></a>
+          </div>
           <p class="eyebrow hero-eyebrow" data-hero-item>
             <span class="status-dot" aria-hidden="true"></span>
             Technion biotechnology / Scientific systems builder
@@ -204,6 +238,7 @@
       </section>
 
       <section class="work-section section-shell" id="work" aria-labelledby="work-title">
+        <span class="route-anchor" id="products" aria-hidden="true"></span>
         <div class="section-heading" data-reveal>
           <div>
             <p class="eyebrow"><span>01</span> Selected work</p>
@@ -599,6 +634,7 @@
       </section>
 
       <section class="direction-section section-shell" id="direction" aria-labelledby="direction-title">
+        <span class="route-anchor" id="science" aria-hidden="true"></span>
         <div class="section-heading direction-heading" data-reveal>
           <div>
             <p class="eyebrow"><span>03</span> Research direction</p>
@@ -641,6 +677,69 @@
           </div>
         </div>
 
+      </section>
+
+      <section class="interest-section section-shell" id="software" aria-labelledby="software-title">
+        <div class="section-heading" data-reveal>
+          <div>
+            <p class="eyebrow">Software &amp; AI</p>
+            <h2 id="software-title">From data to a tool you can use.</h2>
+          </div>
+          <p>I combine scientific knowledge with software development. I build tools that make calculations, evidence, and learning easier to use.</p>
+        </div>
+        <div class="capability-grid">
+          <article data-reveal>
+            <span class="capability-index">01 / DATA</span>
+            <h3>Python &amp; SQL</h3>
+            <p>I process scientific data with Python, Pandas, NumPy, and SQLite. Shoresh turns food composition data into a browser tool.</p>
+            <a class="text-link" href="https://beny-karachun.github.io/Shoresh/" target="_blank" rel="noopener noreferrer">Explore Shoresh <span aria-hidden="true">↗</span></a>
+          </article>
+          <article data-reveal>
+            <span class="capability-index">02 / INTERFACE</span>
+            <h3>Web applications</h3>
+            <p>I build browser tools and websites with clear inputs and results. CFU Calculator and MathPaster started with tasks I wanted to make easier.</p>
+            <a class="text-link" href="https://mathpaster.com" target="_blank" rel="noopener noreferrer">Try MathPaster <span aria-hidden="true">↗</span></a>
+          </article>
+          <article data-reveal>
+            <span class="capability-index">03 / AI</span>
+            <h3>AI with source evidence</h3>
+            <p>I work with OpenAI, Gemini, and Claude APIs. Circuit Atlas combines research tools with links to the original evidence.</p>
+            <a class="text-link" href="#circuit-atlas">See Circuit Atlas <span aria-hidden="true">↓</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="interest-section services-section section-shell" id="services" aria-labelledby="services-title">
+        <div class="section-heading" data-reveal>
+          <div>
+            <p class="eyebrow">Work with me</p>
+            <h2 id="services-title">Make everyday work easier.</h2>
+          </div>
+          <p>Tell me what takes time, causes errors, or makes your work difficult. We can discuss a tool or process that fits your needs.</p>
+        </div>
+        <div class="service-list">
+          <article data-reveal>
+            <span class="capability-index">01</span>
+            <h3>Internal tools</h3>
+            <p>Calculators, searchable records, and tools for tasks you repeat. My experience includes making paper records digital and searchable.</p>
+          </article>
+          <article data-reveal>
+            <span class="capability-index">02</span>
+            <h3>Websites</h3>
+            <p>Clear websites for your business, project, or product. My work includes rebuilding the Aviator website as a static site.</p>
+          </article>
+          <article data-reveal>
+            <span class="capability-index">03</span>
+            <h3>Business improvement</h3>
+            <p>Review a process and reduce routine manual work. I have used the WhatsApp Business API to automate client requests and communication.</p>
+          </article>
+          <article data-reveal>
+            <span class="capability-index">04</span>
+            <h3>Something else?</h3>
+            <p>Have a different need? Send a short description. We can discuss what I can help you build.</p>
+          </article>
+        </div>
+        <a class="button button-primary service-contact" href="#contact">Tell me about your project <span aria-hidden="true">↓</span></a>
       </section>
 
       <section class="about-section section-shell" id="about" aria-labelledby="about-title">
@@ -729,7 +828,7 @@
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="section-shell contact-inner" data-reveal>
           <p class="eyebrow"><span>05</span> Contact</p>
-          <h2 id="contact-title">Open to biotech internships<br><span>and research-lab opportunities.</span></h2>
+          <h2 id="contact-title">Research, software, or a new project?<br><span>Let’s talk.</span></h2>
           <div class="contact-bottom">
             <a class="contact-email" href="mailto:kbeniamin@campus.technion.ac.il">
               kbeniamin@campus.technion.ac.il <span aria-hidden="true">↗</span>
@@ -743,13 +842,13 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" hidden>
       <div class="section-shell footer-inner">
         <a class="brand footer-brand" href="#top" aria-label="BK — Back to top">
           <span class="brand-mark" aria-hidden="true">BK</span>
           <span class="brand-name">Beny Karachun</span>
         </a>
-        <p>Science should stay rigorous. Its tools should feel obvious.</p>
+        <p>Science, software, and tools that make work easier.</p>
         <a class="back-to-top" href="#top">Back to top ↑</a>
       </div>
     </footer>
