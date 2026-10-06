@@ -36,8 +36,9 @@ Specialization: Computational Biotechnology, Food Engineering and Health
 
 **Circuit Atlas** | *Developer* | [brain.technionprep.com](https://brain.technionprep.com/)
 
-- Built an interactive mouse brain atlas to explore brain regions and their connections.
-- Provides input and output pathways and source data from the Allen Mouse Brain Atlas.
+- Built a mouse brain connectivity platform with 1,099 region axes, a 1,099 × 1,099 matrix per laterality layer, and about 7.7 million measurements from 2,992 Allen experiments.
+- Added cohort comparisons and links from derived results to original measurements, experiments, and publications.
+- Integrated an anatomical slice viewer and AI research modes that use matrix data, source records, or web sources.
 
 **TechnionPrep** | *Developer* | [bfe.technionprep.com](https://bfe.technionprep.com)
 

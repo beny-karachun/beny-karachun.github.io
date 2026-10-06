@@ -57,6 +57,19 @@ Then open `http://localhost:4173`.
 
 Project cards live under `#work`, and the complete link hub lives under `#directory` in `index.html`. Add new websites to the directory even if they do not need a full visual card.
 
+### Circuit Atlas snapshot
+
+The Circuit Atlas card uses the real full matrix from
+[Circuit Atlas](https://brain.technionprep.com/?view=matrix&matrix=full).
+The image shows the ipsilateral layer in anatomical division and hierarchy order,
+colored by evidence status.
+It was captured on 6 October 2026. The collection then reported 1,099 region axes,
+1,207,801 cells per laterality layer, 2,992 Allen experiments, about 7.7 million
+Allen measurements, and 10 publication or archive sources.
+Matrix cells include evidence gaps and overlapping parent and child regions.
+They are not a count of confirmed biological connections.
+Update the image and the card counts together when the collection changes.
+
 ## Regenerating the résumé PDF
 
 With the local server running and Chrome installed:

@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-ASSETS = ("styles.css", "script.js", "resume.css", "benjamin-karachun-resume.pdf")
+ASSETS = ("styles.css", "script.js", "resume.css", "benjamin-karachun-resume.pdf", "assets/circuit-atlas-matrix.jpg")
 
 for page_name in ("index.html", "resume.html"):
     page = ROOT / page_name
