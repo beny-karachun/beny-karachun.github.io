@@ -2,6 +2,28 @@
 
 A zero-build static portfolio and project hub. The site is intentionally plain HTML, CSS, and JavaScript so it can be hosted on GitHub Pages, Netlify, Cloudflare Pages, or any standard web server without a build step.
 
+## Publish the main site
+
+The main site is [https://beny-karachun.github.io/](https://beny-karachun.github.io/).
+GitHub Pages publishes the root directory of the `main` branch in
+[`beny-karachun/beny-karachun.github.io`](https://github.com/beny-karachun/beny-karachun.github.io).
+The `.nojekyll` file lets GitHub publish the static files directly.
+
+The local `pages` remote points to this repository. To add it in a new checkout, run:
+
+```bash
+git remote add pages https://github.com/beny-karachun/beny-karachun.github.io.git
+```
+
+After you commit site changes, publish them with:
+
+```bash
+git push pages main
+```
+
+The `origin` remote points to the original `benykarachun` repository.
+To update that copy, run `git push origin main`.
+
 ## Preview locally
 
 From this directory, run:
