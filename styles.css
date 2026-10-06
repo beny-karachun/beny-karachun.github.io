@@ -258,7 +258,8 @@ dd {
   transition-timing-function: ease-out;
 }
 
-.desktop-nav a:hover {
+.desktop-nav a:hover,
+.desktop-nav a[aria-current="location"] {
   background: rgba(255, 255, 255, 0.08);
   color: var(--white);
 }
@@ -920,6 +921,7 @@ dd {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
   min-height: 52px;
   padding: 0 22px;
   color: rgba(11, 13, 12, 0.56);
@@ -1920,6 +1922,22 @@ dd {
   margin-bottom: 80px;
 }
 
+.about-story {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-ink);
+}
+
+.about-story summary {
+  width: fit-content;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.about-story[open] summary {
+  margin-bottom: 20px;
+}
+
 .about-intro h2 {
   max-width: 1040px;
 }
@@ -2070,6 +2088,7 @@ dd {
 
 .contact-inner h2 {
   margin-bottom: 70px;
+  overflow-wrap: anywhere;
   font-size: clamp(3.5rem, 7.4vw, 7.7rem);
   font-weight: 500;
   letter-spacing: -0.075em;
@@ -2273,8 +2292,10 @@ dd {
     display: flex;
     visibility: hidden;
     flex-direction: column;
-    padding: 30px 24px 50px;
-    background: rgba(11, 13, 12, 0.98);
+    padding: 20px 24px max(24px, env(safe-area-inset-bottom));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--ink);
     opacity: 0;
     pointer-events: none;
     transform: translateY(-12px);
@@ -2290,10 +2311,15 @@ dd {
     transform: translateY(0);
   }
 
+  .mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+  }
+
   .mobile-menu a {
     display: flex;
     align-items: baseline;
-    min-height: 82px;
+    min-height: 74px;
     padding: 12px 4px;
     gap: 22px;
     font-size: clamp(2.2rem, 8vw, 4rem);
@@ -2307,6 +2333,10 @@ dd {
     font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0;
+  }
+
+  .mobile-menu a[aria-current="location"] {
+    color: var(--lime);
   }
 
   .hero {
@@ -2366,11 +2396,35 @@ dd {
   }
 
   .directory-list a {
-    grid-template-columns: 42px 1fr minmax(170px, 0.8fr) 44px;
+    grid-template-columns: 42px minmax(0, 1fr) minmax(150px, 0.8fr) 44px;
+    padding-block: 18px;
+    row-gap: 4px;
   }
 
-  .directory-type {
-    display: none;
+  .directory-list strong {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .directory-list .directory-type {
+    display: block;
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .directory-list .directory-number {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .directory-list code {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+
+  .directory-list a > i {
+    grid-column: 4;
+    grid-row: 1 / span 2;
   }
 
   .about-layout {
@@ -2416,8 +2470,8 @@ dd {
   }
 
   .hero {
-    padding: 130px 0 62px;
-    gap: 54px;
+    padding: 100px 0 40px;
+    gap: 0;
   }
 
   .hero-eyebrow {
@@ -2445,8 +2499,7 @@ dd {
   }
 
   .hero-atlas {
-    padding: 12px;
-    border-radius: 24px;
+    display: none;
   }
 
   .atlas-topline,
@@ -2480,12 +2533,12 @@ dd {
   .work-section {
     width: calc(100% - 12px);
     margin-top: 12px;
-    padding: 82px 14px 14px;
+    padding: 56px 14px 14px;
     border-radius: 28px;
   }
 
   .section-heading {
-    margin-bottom: 42px;
+    margin-bottom: 28px;
     padding-inline: 6px;
   }
 
@@ -2528,14 +2581,19 @@ dd {
   .cfu-visual,
   .python-visual,
   .algo-visual {
-    min-height: 270px;
+    min-height: 200px;
     margin-inline: 10px;
     border-radius: 12px;
   }
 
   .brain-visual {
-    padding: 18px 12px;
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    padding: 14px 12px;
     gap: 12px;
+  }
+
+  .brain-map {
+    max-height: 170px;
   }
 
   .brain-summary > span,
@@ -2553,7 +2611,11 @@ dd {
   }
 
   .equation-shell {
-    padding: 34px 18px 26px;
+    padding: 20px 18px;
+  }
+
+  .equation-label {
+    margin-bottom: 12px;
   }
 
   .equation {
@@ -2564,6 +2626,7 @@ dd {
   .equation-output {
     grid-template-columns: auto 1fr;
     gap: 10px;
+    margin-top: 16px;
   }
 
   .equation-output i {
@@ -2572,7 +2635,7 @@ dd {
 
   .project-content {
     min-height: auto;
-    padding: 24px 18px 20px;
+    padding: 20px 18px;
   }
 
   .project-content h3 {
@@ -2583,13 +2646,17 @@ dd {
     font-size: 6.7rem;
   }
 
+  .chip-one { top: 28px; left: 18px; }
+  .chip-two { top: 82px; left: 32px; }
+  .chip-three { top: 136px; bottom: auto; left: 18px; }
+
   .petri-dish {
-    width: 180px;
-    height: 180px;
+    width: 142px;
+    height: 142px;
   }
 
   .cfu-visual {
-    padding: 22px;
+    padding: 18px;
   }
 
   .cfu-readout strong {
@@ -2597,7 +2664,7 @@ dd {
   }
 
   .python-visual pre {
-    padding: 30px 17px 22px;
+    padding: 20px 17px;
   }
 
   .test-results {
@@ -2605,15 +2672,15 @@ dd {
   }
 
   .directory-section {
-    padding: 100px 0;
+    padding: 64px 0;
   }
 
   .direction-section {
-    padding: 96px 0;
+    padding: 64px 0;
   }
 
   .direction-thesis {
-    min-height: 460px;
+    min-height: 300px;
     padding: 34px 24px;
     border-radius: 24px;
   }
@@ -2623,7 +2690,11 @@ dd {
   }
 
   .direction-thesis > p:last-child {
-    margin-top: 34px;
+    margin-top: 24px;
+  }
+
+  .direction-kicker {
+    margin-bottom: 24px;
   }
 
   .direction-tracks {
@@ -2643,10 +2714,11 @@ dd {
   }
 
   .directory-list a {
-    grid-template-columns: 32px 1fr 40px;
+    grid-template-columns: 32px minmax(0, 1fr) 40px;
     min-height: 82px;
     padding-inline: 6px 0;
-    gap: 12px;
+    column-gap: 12px;
+    row-gap: 4px;
   }
 
   .directory-list a:hover {
@@ -2657,22 +2729,27 @@ dd {
     display: none;
   }
 
+  .directory-list a > i {
+    grid-column: 3;
+  }
+
   .directory-list strong {
     font-size: 1.1rem;
   }
 
   .about-section {
     width: calc(100% - 12px);
-    padding: 90px 20px 20px;
+    padding: 64px 20px 20px;
     border-radius: 28px 28px 0 0;
   }
 
   .about-intro {
-    margin-bottom: 56px;
+    margin-bottom: 32px;
   }
 
   .about-layout {
-    padding-top: 38px;
+    padding-top: 28px;
+    gap: 32px;
   }
 
   .about-copy p {
@@ -2686,7 +2763,7 @@ dd {
 
   .resume-panel {
     grid-template-columns: 1fr;
-    margin-top: 70px;
+    margin-top: 40px;
     min-height: 0;
     padding: 24px 20px;
     gap: 24px;
@@ -2704,7 +2781,7 @@ dd {
   }
 
   .contact-section {
-    padding: 92px 0 82px;
+    padding: 64px 0;
   }
 
   .contact-inner h2 {
@@ -2768,7 +2845,7 @@ dd {
   }
 
   .direction-thesis {
-    min-height: 430px;
+    min-height: 300px;
   }
 
   .direction-thesis blockquote {
@@ -2797,7 +2874,7 @@ dd {
   }
 
   .cfu-visual {
-    min-height: 250px;
+    min-height: 200px;
   }
 
   .petri-dish {

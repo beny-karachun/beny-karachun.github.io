@@ -15,6 +15,16 @@ The local `pages` remote points to this repository. To add it in a new checkout,
 git remote add pages https://github.com/beny-karachun/beny-karachun.github.io.git
 ```
 
+Before you commit site changes, update the asset versions:
+
+```bash
+python3 scripts/update_asset_versions.py
+```
+
+The script adds a content hash to local CSS, JavaScript, and résumé PDF links.
+This lets browsers load the correct files after an update.
+Run it again after you regenerate a PDF.
+
 After you commit site changes, publish them with:
 
 ```bash
@@ -56,3 +66,6 @@ google-chrome --headless --disable-gpu --no-sandbox --no-pdf-header-footer \
   --print-to-pdf="$PWD/benjamin-karachun-resume.pdf" \
   http://127.0.0.1:4173/resume.html
 ```
+
+Copy the new PDF to `CV_Draft.pdf` to keep both download filenames in sync.
+Then run `python3 scripts/update_asset_versions.py` before you commit.

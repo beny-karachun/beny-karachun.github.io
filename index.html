@@ -26,11 +26,11 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=8cf5c77b712f">
     <script>
       document.documentElement.classList.add("js");
     </script>
-    <script src="script.js" defer></script>
+    <script src="script.js?v=e8767528b3a6" defer></script>
   </head>
 
   <body>
@@ -45,9 +45,11 @@
         </a>
 
         <nav class="desktop-nav" aria-label="Primary navigation">
-          <a href="#work">Work</a>
-          <a href="#direction">Direction</a>
+          <a href="#work">Projects</a>
+          <a href="#directory">All projects</a>
+          <a href="#direction">Research</a>
           <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </nav>
 
         <div class="header-actions">
@@ -99,13 +101,18 @@
         </div>
       </div>
 
-      <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" data-mobile-menu>
-        <a href="#work"><span>01</span> Work</a>
-        <a href="#direction"><span>02</span> Direction</a>
-        <a href="#about"><span>03</span> About</a>
-        <a href="resume.html"><span>04</span> Résumé</a>
-      </nav>
     </header>
+
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true" data-mobile-menu>
+      <nav aria-label="Mobile navigation">
+        <a href="#work"><span>01</span> Projects</a>
+        <a href="#directory"><span>02</span> All projects</a>
+        <a href="#direction"><span>03</span> Research</a>
+        <a href="#about"><span>04</span> About</a>
+        <a href="#contact"><span>05</span> Contact</a>
+        <a href="resume.html"><span>06</span> Résumé</a>
+      </nav>
+    </div>
 
     <main id="main-content">
       <section class="hero" id="top" aria-labelledby="hero-title">
@@ -122,19 +129,18 @@
             <span class="headline-accent">The tools don’t have to be.</span>
           </h1>
           <p class="hero-intro" data-hero-item>
-            I combine biology, laboratory work, and software to build transparent
-            tools that make scientific methods easier to use and understand. Next, I want to bring
-            that approach to antimicrobial resistance and immune-engineering research.
+            I’m Beny, a Biotechnology &amp; Food Engineering student at the Technion.
+            I build scientific software and tools for laboratory work and learning.
           </p>
           <div class="hero-actions" data-hero-item>
             <a class="button button-primary" href="#work">
-              See scientific work
+              View projects
               <svg viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M8 3v10M4 9l4 4 4-4" />
               </svg>
             </a>
-            <a class="button button-quiet button-section" href="#direction">
-              Research direction
+            <a class="button button-quiet button-section" href="#contact">
+              Contact me
               <svg viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M8 3v10M4 9l4 4 4-4" />
               </svg>
@@ -488,69 +494,14 @@
         </div>
       </section>
 
-      <section class="direction-section section-shell" id="direction" aria-labelledby="direction-title">
-        <div class="section-heading direction-heading" data-reveal>
-          <div>
-            <p class="eyebrow"><span>02</span> Research direction</p>
-            <h2 id="direction-title">Make human immunity better at fighting bacteria.</h2>
-          </div>
-          <p>
-            My long-term focus is antimicrobial resistance—especially <i>Staphylococcus aureus</i>—
-            approached through immune engineering, gene and cell editing, and computational design.
-          </p>
-        </div>
-
-        <div class="direction-layout">
-          <article class="direction-thesis" data-reveal>
-            <p class="direction-kicker">THE ABSTRACTION PROBLEM</p>
-            <blockquote>
-              Biology is still too often operated at the equivalent of assembly language.
-            </blockquote>
-            <p>
-              I want to help build higher-level systems that let researchers design, test, and
-              reason about biological mechanisms more directly—without hiding the underlying science.
-            </p>
-          </article>
-
-          <div class="direction-tracks" aria-label="Research direction components">
-            <article class="direction-track" data-reveal style="--reveal-delay: 60ms">
-              <span>01 / PATHOGEN</span>
-              <h3><i>Staphylococcus aureus</i></h3>
-              <p>Understand and counter a clinically important pathogen, with antibiotic resistance as the central problem.</p>
-            </article>
-            <article class="direction-track" data-reveal style="--reveal-delay: 120ms">
-              <span>02 / HOST</span>
-              <h3>Human immune systems</h3>
-              <p>Improve bacterial detection and targeting, add protective mechanisms, or tune immune responses when necessary.</p>
-            </article>
-            <article class="direction-track" data-reveal style="--reveal-delay: 180ms">
-              <span>03 / METHOD</span>
-              <h3>Editing + computation</h3>
-              <p>Explore CRISPR, base editing, engineered immune cells, and machine-learning-guided design as candidate routes.</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="foundation-strip" data-reveal>
-          <span>Current foundation</span>
-          <ul>
-            <li>Microbiology laboratories</li>
-            <li>Disc diffusion &amp; MIC</li>
-            <li>PCR &amp; gel electrophoresis</li>
-            <li>Quantitative analysis</li>
-            <li>Python &amp; data workflows</li>
-          </ul>
-        </div>
-      </section>
-
       <section class="directory-section" id="directory" aria-labelledby="directory-title">
         <div class="section-shell">
           <div class="section-heading directory-heading" data-reveal>
             <div>
-              <p class="eyebrow"><span>03</span> The directory</p>
-              <h2 id="directory-title">The rest of the toolbench.</h2>
+              <p class="eyebrow"><span>02</span> Project directory</p>
+              <h2 id="directory-title">All projects.</h2>
             </div>
-            <p>Scientific tools lead the story, but the broader pattern is the same: find friction, understand it, and build.</p>
+            <p>Scientific software, study tools, and other projects. Each link opens the project in a new tab.</p>
           </div>
 
           <div class="directory-list" data-reveal>
@@ -642,6 +593,51 @@
         </div>
       </section>
 
+      <section class="direction-section section-shell" id="direction" aria-labelledby="direction-title">
+        <div class="section-heading direction-heading" data-reveal>
+          <div>
+            <p class="eyebrow"><span>03</span> Research direction</p>
+            <h2 id="direction-title">Make human immunity better at fighting bacteria.</h2>
+          </div>
+          <p>
+            I want to study antimicrobial resistance, especially <i>Staphylococcus aureus</i>, through immune engineering.
+            My interests include gene and cell editing and computational design.
+          </p>
+        </div>
+
+        <div class="direction-layout">
+          <article class="direction-thesis" data-reveal>
+            <p class="direction-kicker">RESEARCH TOOLS</p>
+            <blockquote>
+              Design. Test. Understand.
+            </blockquote>
+            <p>
+              I want to help researchers design, test, and explain biological methods
+              with tools that keep the underlying science visible.
+            </p>
+          </article>
+
+          <div class="direction-tracks" aria-label="Research direction components">
+            <article class="direction-track" data-reveal style="--reveal-delay: 60ms">
+              <span>01 / PATHOGEN</span>
+              <h3><i>Staphylococcus aureus</i></h3>
+              <p>Understand and counter a clinically important pathogen, with antibiotic resistance as the central problem.</p>
+            </article>
+            <article class="direction-track" data-reveal style="--reveal-delay: 120ms">
+              <span>02 / HOST</span>
+              <h3>Human immune systems</h3>
+              <p>Improve bacterial detection and targeting, add protective mechanisms, or tune immune responses when necessary.</p>
+            </article>
+            <article class="direction-track" data-reveal style="--reveal-delay: 180ms">
+              <span>03 / METHOD</span>
+              <h3>Editing + computation</h3>
+              <p>Explore CRISPR, base editing, engineered immune cells, and machine-learning-guided design as candidate routes.</p>
+            </article>
+          </div>
+        </div>
+
+      </section>
+
       <section class="about-section section-shell" id="about" aria-labelledby="about-title">
         <div class="about-intro" data-reveal>
           <p class="eyebrow"><span>04</span> About</p>
@@ -651,26 +647,26 @@
         <div class="about-layout">
           <div class="about-copy" data-reveal>
             <p>
-              I’m Beny, a Biotechnology &amp; Food Engineering student at the Technion. My best work
-              starts when a scientific workflow feels needlessly difficult: understand the method,
-              make the reasoning visible, then build a tool that respects both.
+              My training includes microbiology, molecular biology, analytical methods, and quantitative analysis.
+              I combine this laboratory foundation with Python, SQL, and web development.
             </p>
             <p>
-              My interest in antimicrobial resistance began after a recurring <i>Staphylococcus aureus</i>
-              infection left me with more questions than answers. Laboratory testing reportedly classified
-              the bacterium as susceptible, yet the infection returned after treatment. I do not treat that
-              experience as evidence of resistance or of any particular biological mechanism. Instead, it
-              became the catalyst for my curiosity about how susceptibility tests relate to clinical outcomes,
-              and how researchers study persistence, treatment failure, and host–pathogen interactions. I began
-              exploring those questions independently about four years before entering the Technion, and they
-              ultimately led me to choose Biotechnology &amp; Food Engineering.
+              Alongside my studies, I tutor Python and build websites and tools for students and small businesses.
+              My experience includes technology consulting and work on laboratory and study software.
             </p>
-            <p>
-              It shaped the research question I want to pursue: if bacteria can continually evolve around
-              our interventions, can we engineer immune responses that adapt quickly enough to stay ahead?
-              I want to explore defenses that act precisely and continuously throughout an infection,
-              reducing the opportunity for bacterial populations to persist, recover, or evolve an escape.
-            </p>
+            <details class="about-story">
+              <summary>Why I chose biotechnology</summary>
+              <p>
+                A recurring <i>Staphylococcus aureus</i> infection raised questions about treatment outcomes.
+                Laboratory testing reportedly classified the bacterium as susceptible, yet the infection returned after treatment.
+                This experience does not establish resistance or a specific biological mechanism.
+              </p>
+              <p>
+                It led me to explore susceptibility testing, persistence, and host–pathogen interactions independently.
+                I began this study about four years before entering the Technion.
+                Those questions helped me choose Biotechnology &amp; Food Engineering.
+              </p>
+            </details>
           </div>
 
           <dl class="about-facts" data-reveal>
@@ -696,10 +692,10 @@
               </dd>
             </div>
             <div>
-              <dt>Working toward</dt>
+              <dt>Experience</dt>
               <dd>
-                <span><i>Staphylococcus aureus</i>, AMR &amp; immune engineering</span>
-                <small>Better detection, targeting and immune modulation</small>
+                <span>Python tutoring, web development &amp; technology consulting</span>
+                <small>Students, small businesses &amp; scientific tools</small>
               </dd>
             </div>
           </dl>
@@ -718,14 +714,14 @@
                 <path d="M4 12 12 4M6 4h6v6" />
               </svg>
             </a>
-            <a class="text-link" href="benjamin-karachun-resume.pdf" download>
+            <a class="text-link" href="benjamin-karachun-resume.pdf?v=5e7a6e08ca04" download>
               Download PDF <span aria-hidden="true">↓</span>
             </a>
           </div>
         </div>
       </section>
 
-      <section class="contact-section" aria-labelledby="contact-title">
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="section-shell contact-inner" data-reveal>
           <p class="eyebrow"><span>05</span> Contact</p>
           <h2 id="contact-title">Open to biotech internships<br><span>and research-lab opportunities.</span></h2>

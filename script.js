@@ -3,6 +3,13 @@ const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 const progressBar = document.querySelector(".scroll-progress span");
 const hero = document.querySelector(".hero");
+const menuBackground = document.querySelectorAll(
+  "main, .site-footer, .skip-link, .site-header .brand, .desktop-nav, .header-actions > a",
+);
+const sectionLinks = document.querySelectorAll('.desktop-nav a[href^="#"], .mobile-menu a[href^="#"]');
+const navigableSections = Array.from(document.querySelectorAll("main > section[id]")).filter(
+  (section) => Array.from(sectionLinks).some((link) => link.hash === `#${section.id}`),
+);
 
 const setMenuState = (isOpen, returnFocus = false) => {
   if (!menuToggle || !mobileMenu) return;
@@ -10,33 +17,57 @@ const setMenuState = (isOpen, returnFocus = false) => {
   menuToggle.setAttribute("aria-expanded", String(isOpen));
   menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
   mobileMenu.classList.toggle("is-open", isOpen);
+  mobileMenu.setAttribute("aria-hidden", String(!isOpen));
   document.body.classList.toggle("nav-open", isOpen);
+  menuBackground.forEach((element) => { element.inert = isOpen; });
 
-  if (returnFocus) menuToggle.focus();
+  if (isOpen) {
+    // Apply the visible menu style before moving keyboard focus.
+    mobileMenu.getBoundingClientRect();
+    mobileMenu.querySelector("a")?.focus();
+  } else if (returnFocus) menuToggle.focus();
 };
 
 menuToggle?.addEventListener("click", () => {
   const isOpen = menuToggle.getAttribute("aria-expanded") !== "true";
-  setMenuState(isOpen);
-
-  if (isOpen) {
-    window.requestAnimationFrame(() => mobileMenu?.querySelector("a")?.focus());
-  }
+  setMenuState(isOpen, !isOpen);
 });
 
 mobileMenu?.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => setMenuState(false));
+  link.addEventListener("click", () => {
+    setMenuState(false);
+    if (link.hash) {
+      const destination = document.getElementById(link.hash.slice(1));
+      destination?.setAttribute("tabindex", "-1");
+      destination?.focus({ preventScroll: true });
+    }
+  });
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && menuToggle?.getAttribute("aria-expanded") === "true") {
+  if (menuToggle?.getAttribute("aria-expanded") !== "true") return;
+  if (event.key === "Escape") {
+    event.preventDefault();
     setMenuState(false, true);
+  } else if (event.key === "Tab") {
+    const focusTargets = [menuToggle, ...mobileMenu.querySelectorAll("a")];
+    const currentIndex = focusTargets.indexOf(document.activeElement);
+    const nextIndex = event.shiftKey
+      ? (currentIndex <= 0 ? focusTargets.length - 1 : currentIndex - 1)
+      : (currentIndex + 1) % focusTargets.length;
+    event.preventDefault();
+    focusTargets[nextIndex].focus();
   }
 });
 
 window.addEventListener("resize", () => {
   if (window.innerWidth > 960 && menuToggle?.getAttribute("aria-expanded") === "true") {
+    const focusedLink = document.activeElement?.getAttribute("href");
     setMenuState(false);
+    const desktopLink = Array.from(sectionLinks).find(
+      (link) => link.closest(".desktop-nav") && link.getAttribute("href") === focusedLink,
+    );
+    (desktopLink || document.querySelector(".desktop-nav a"))?.focus({ preventScroll: true });
   }
 });
 
@@ -69,6 +100,13 @@ const updateScrollState = () => {
 
   header?.classList.toggle("is-scrolled", scrollTop > 18);
   if (progressBar) progressBar.style.transform = `scaleX(${progress})`;
+  const activeSection = navigableSections.slice().reverse().find(
+    (section) => section.getBoundingClientRect().top <= 140,
+  );
+  sectionLinks.forEach((link) => {
+    if (link.hash === `#${activeSection?.id}`) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
   scrollFrame = 0;
 };
 

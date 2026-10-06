@@ -7,7 +7,7 @@ Israel | 054-612-3730 | kbeniamin@campus.technion.ac.il | [LinkedIn](https://www
 
 ### PROFILE
 
-Biotechnology and Food Engineering student at the Technion, specializing in computational biotechnology, with hands-on training in microbiology, molecular biology, analytical methods, and quantitative analysis. I build validated scientific tools that translate laboratory calculations and public-health datasets into transparent workflows. Seeking a biotech internship or research-lab role.
+Biotechnology and Food Engineering student at the Technion, specializing in computational biotechnology. Trained in microbiology, molecular biology, analytical methods, and quantitative analysis. Builds scientific software for laboratory calculations and public datasets. Seeking a biotech internship or research-lab role.
 
 ---
 
@@ -33,6 +33,11 @@ Specialization: Computational Biotechnology, Food Engineering and Health
 - Built a course-tailored alternative to Tzameret from public Israeli Ministry of Health datasets, supporting food and nutrient analysis, recipes, processing-retention calculations, comparisons, and label generation.
 - Developed the Python ETL pipeline and in-browser SQLite/WebAssembly data layer.
 - Validated shared calculations side by side with the course teaching assistant against Tzameret, reproducing identical outputs for matched inputs; awarded 20 course bonus points.
+
+**Circuit Atlas** | *Developer* | [brain.technionprep.com](https://brain.technionprep.com/)
+
+- Built an interactive mouse brain atlas to explore brain regions and their connections.
+- Provides input and output pathways and source data from the Allen Mouse Brain Atlas.
 
 **TechnionPrep** | *Developer* | [bfe.technionprep.com](https://bfe.technionprep.com)
 
